@@ -25,6 +25,7 @@ import { apis } from './apis';
 import { entityPage } from './components/catalog/EntityPage';
 import { searchPage } from './components/search/SearchPage';
 import { Root } from './components/Root';
+import { ToolboxPage } from '@drodil/backstage-plugin-toolbox';
 
 import {
   AlertDisplay,
@@ -123,6 +124,7 @@ const routes = (
     <Route path="/playlist/:playlistId" element={<PlaylistPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
     <Route path="/explore" element={<ExplorePage />} />
+    <Route path="/toolbox" element={<ToolboxPage />} />
     <Route path="/rbac" element={<RbacPage />} />;
   </FlatRoutes>
 );
