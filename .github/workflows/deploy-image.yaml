@@ -27,19 +27,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'yarn'
+      # - uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '20'
+      #     cache: 'yarn'
       
-      - name: Install package
-        run: |
-          yarn install --immutable
+      # - name: Install package
+      #   run: |
+      #     yarn install --immutable
 
-      - name: Node build
-        run: |
-          yarn tsc
-          yarn build:backend
+      # - name: Node build
+      #   run: |
+      #     yarn tsc
+      #     yarn build:backend
 
       - name: Login to dockerhub
         uses: docker/login-action@v3
@@ -67,7 +67,7 @@ jobs:
           # Strip "v" prefix from tag name, keep the number version
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
 
-          yarn build-image \
+          docker buildx build . \
             --tag $IMAGE_NAME:$VERSION \
             --tag $IMAGE_NAME:latest \
             --platform linux/amd64,linux/arm64 \

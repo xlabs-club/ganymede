@@ -30,9 +30,7 @@ yarn dev
 yarn install --immutable
 yarn tsc && yarn build:backend
 # 编译镜像，需要安装 docker 并启用 docker buildx，示例
-yarn build-image --tag ganymede:dev --platform linux/amd64,linux/arm64 --load
-# 发布镜像，需要先登录 docker hub
-# yarn build-image --tag nxest/ganymede:dev --platform linux/amd64 --push
+docker buildx build --tag ganymede:dev --platform linux/amd64,linux/arm64 --load
 ```
 
 ### Backstage 版本升级
@@ -60,7 +58,7 @@ Backstage 版本更新很频繁，保持最新版本的方法请参考官方文�
 
 常规变更：
 
-- `backend/package.json` 修改了 `build-image`, 增加 `\"$@\"`，支持 docker 编译指定参数，编译命令参考 `.github/workflows/deploy-image.yaml` 文件。
+- 参考 [backstage.io multi-stage-build](https://backstage.io/docs/deployment/docker/#multi-stage-build) 支持 Docker 多阶段构建。
 
 插件列表：
 
