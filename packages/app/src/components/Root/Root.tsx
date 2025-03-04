@@ -93,6 +93,7 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
       {/* <SidebarItem icon={PlaylistPlayIcon} to="playlist" text="Playlists" /> */}
       <Shortcuts allowExternalLinks={true} />
       <SidebarDivider />
+      <Administration />
       <SidebarGroup
         label="Settings"
         icon={<UserSettingsSignInAvatar />}
@@ -100,7 +101,6 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
       >
         <SidebarSettings />
       </SidebarGroup>
-      <Administration />
     </Sidebar>
     {children}
   </SidebarPage>
