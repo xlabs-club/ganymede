@@ -3396,6 +3396,43 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@backstage/backend-test-utils@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@backstage/backend-test-utils@npm:1.3.0"
+  dependencies:
+    "@backstage/backend-app-api": "npm:^1.2.0"
+    "@backstage/backend-defaults": "npm:^0.8.0"
+    "@backstage/backend-plugin-api": "npm:^1.2.0"
+    "@backstage/config": "npm:^1.3.2"
+    "@backstage/errors": "npm:^1.2.7"
+    "@backstage/plugin-auth-node": "npm:^0.6.0"
+    "@backstage/plugin-events-node": "npm:^0.4.8"
+    "@backstage/types": "npm:^1.2.1"
+    "@keyv/memcache": "npm:^2.0.1"
+    "@keyv/redis": "npm:^4.0.1"
+    "@types/express": "npm:^4.17.6"
+    "@types/express-serve-static-core": "npm:^4.17.5"
+    "@types/keyv": "npm:^4.2.0"
+    "@types/qs": "npm:^6.9.6"
+    better-sqlite3: "npm:^11.0.0"
+    cookie: "npm:^0.7.0"
+    express: "npm:^4.17.1"
+    fs-extra: "npm:^11.0.0"
+    keyv: "npm:^5.2.1"
+    knex: "npm:^3.0.0"
+    mysql2: "npm:^3.0.0"
+    pg: "npm:^8.11.3"
+    pg-connection-string: "npm:^2.3.0"
+    testcontainers: "npm:^10.0.0"
+    textextensions: "npm:^5.16.0"
+    uuid: "npm:^11.0.0"
+    yn: "npm:^4.0.0"
+  peerDependencies:
+    "@types/jest": "*"
+  checksum: 10c0/45dea886c359922f7f7754ba0d8b632c0b3c5e1f5e88a1308d7fb96293d4af858ad6e31b68dc72d643992fb5b54f36d8fa6e2fa30ffda1a455d87999d81f426c
+  languageName: node
+  linkType: hard
+
 "@backstage/catalog-client@npm:^1.9.1":
   version: 1.9.1
   resolution: "@backstage/catalog-client@npm:1.9.1"
@@ -7537,6 +7574,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@internal/plugin-catalog-backend-module-keycloak-transformer@workspace:^, @internal/plugin-catalog-backend-module-keycloak-transformer@workspace:plugins/catalog-backend-module-keycloak-transformer":
+  version: 0.0.0-use.local
+  resolution: "@internal/plugin-catalog-backend-module-keycloak-transformer@workspace:plugins/catalog-backend-module-keycloak-transformer"
+  dependencies:
+    "@backstage/backend-plugin-api": "npm:^1.2.0"
+    "@backstage/backend-test-utils": "npm:^1.3.0"
+    "@backstage/cli": "npm:^0.30.0"
+  languageName: unknown
+  linkType: soft
+
 "@ioredis/commands@npm:^1.1.1":
   version: 1.2.0
   resolution: "@ioredis/commands@npm:1.2.0"
@@ -8080,7 +8127,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@keyv/serialize@npm:*, @keyv/serialize@npm:^1.0.2":
+"@keyv/serialize@npm:*, @keyv/serialize@npm:^1.0.2, @keyv/serialize@npm:^1.0.3":
   version: 1.0.3
   resolution: "@keyv/serialize@npm:1.0.3"
   dependencies:
@@ -13147,6 +13194,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/dockerode@npm:^3.3.29":
+  version: 3.3.35
+  resolution: "@types/dockerode@npm:3.3.35"
+  dependencies:
+    "@types/docker-modem": "npm:*"
+    "@types/node": "npm:*"
+    "@types/ssh2": "npm:*"
+  checksum: 10c0/339c60eb0b81f91aeefde8a291b6eebe74163c4798c824857e273ae3b47bbec632b3e422794f30f3e75a915d593548db8845d3abfd0bcea3836f763128a60d10
+  languageName: node
+  linkType: hard
+
 "@types/es-aggregate-error@npm:^1.0.2":
   version: 1.0.6
   resolution: "@types/es-aggregate-error@npm:1.0.6"
@@ -13385,6 +13443,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/keyv@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "@types/keyv@npm:4.2.0"
+  dependencies:
+    keyv: "npm:*"
+  checksum: 10c0/ad626918f1843035b732b582263890a67d73dc3ff80da97e51fbe0ae3f2fe7a1ada2eef1bd89605c5fb739444110e696c0e0703d9b49a842a2f924c6e9164faa
+  languageName: node
+  linkType: hard
+
 "@types/long@npm:^4.0.0":
   version: 4.0.2
   resolution: "@types/long@npm:4.0.2"
@@ -13553,7 +13620,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/qs@npm:*, @types/qs@npm:^6.9.11":
+"@types/qs@npm:*, @types/qs@npm:^6.9.11, @types/qs@npm:^6.9.6":
   version: 6.9.18
   resolution: "@types/qs@npm:6.9.18"
   checksum: 10c0/790b9091348e06dde2c8e4118b5771ab386a8c22a952139a2eb0675360a2070d0b155663bf6f75b23f258fd0a1f7ffc0ba0f059d99a719332c03c40d9e9cd63b
@@ -13697,12 +13764,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/ssh2-streams@npm:*":
+  version: 0.1.12
+  resolution: "@types/ssh2-streams@npm:0.1.12"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/6c860066e76391c937723b9f8c3953208737be5adf33b5584d7817ec90913094f2ca578e1d47717182f1d62cb5ca8e83fdec0241d73bf064221e3a2b2d132f0e
+  languageName: node
+  linkType: hard
+
 "@types/ssh2@npm:*":
   version: 1.15.4
   resolution: "@types/ssh2@npm:1.15.4"
   dependencies:
     "@types/node": "npm:^18.11.18"
   checksum: 10c0/d09f91caa659a666b9a7b3e2da388094988d1616efb12ab114e14056b6360adbfa17732f9e71202d2047a1ef8f9c9b454052a13e86bbb9ee9ff7628147383564
+  languageName: node
+  linkType: hard
+
+"@types/ssh2@npm:^0.5.48":
+  version: 0.5.52
+  resolution: "@types/ssh2@npm:0.5.52"
+  dependencies:
+    "@types/node": "npm:*"
+    "@types/ssh2-streams": "npm:*"
+  checksum: 10c0/95c52fd3438dedae6a59ca87b6558cb36568db6b9144c6c8a28c168739e04c51e27c02908aae14950b7b5020e1c40fea039b1203ae2734c356a40a050fd51c84
   languageName: node
   linkType: hard
 
@@ -14739,7 +14825,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"archiver@npm:^7.0.0":
+"archiver@npm:^7.0.0, archiver@npm:^7.0.1":
   version: 7.0.1
   resolution: "archiver@npm:7.0.1"
   dependencies:
@@ -15390,6 +15476,7 @@ __metadata:
     "@backstage/plugin-search-backend-module-techdocs": "npm:^0.3.6"
     "@backstage/plugin-search-backend-node": "npm:^1.3.8"
     "@backstage/plugin-techdocs-backend": "npm:^1.11.6"
+    "@internal/plugin-catalog-backend-module-keycloak-transformer": "workspace:^"
     app: "link:../app"
     better-sqlite3: "npm:^9.0.0"
     node-gyp: "npm:^10.0.0"
@@ -15418,10 +15505,54 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bare-events@npm:^2.2.0":
+"bare-events@npm:^2.0.0, bare-events@npm:^2.2.0":
   version: 2.5.4
   resolution: "bare-events@npm:2.5.4"
   checksum: 10c0/877a9cea73d545e2588cdbd6fd01653e27dac48ad6b44985cdbae73e1f57f292d4ba52e25d1fba53674c1053c463d159f3d5c7bc36a2e6e192e389b499ddd627
+  languageName: node
+  linkType: hard
+
+"bare-fs@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "bare-fs@npm:4.0.1"
+  dependencies:
+    bare-events: "npm:^2.0.0"
+    bare-path: "npm:^3.0.0"
+    bare-stream: "npm:^2.0.0"
+  checksum: 10c0/db2f4e2646faa011e322cbdc4615fe0cac865a03c2f76d7c686eccf96b0b5eea2bc71dfa37e8cfb14f4f61f8cd3ca95ff7b745d37c55fca319e40ec351d4ae0c
+  languageName: node
+  linkType: hard
+
+"bare-os@npm:^3.0.1":
+  version: 3.5.1
+  resolution: "bare-os@npm:3.5.1"
+  checksum: 10c0/868433c4f5a551919191ad039fd04ba3ec5d0cd7b0de4fbb5854af517561b83a32b722d2d36070520bbf888a1dad6e492ef70f0ff1d41f6861f365fb271af946
+  languageName: node
+  linkType: hard
+
+"bare-path@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "bare-path@npm:3.0.0"
+  dependencies:
+    bare-os: "npm:^3.0.1"
+  checksum: 10c0/56a3ca82a9f808f4976cb1188640ac206546ce0ddff582afafc7bd2a6a5b31c3bd16422653aec656eeada2830cfbaa433c6cbf6d6b4d9eba033d5e06d60d9a68
+  languageName: node
+  linkType: hard
+
+"bare-stream@npm:^2.0.0":
+  version: 2.6.5
+  resolution: "bare-stream@npm:2.6.5"
+  dependencies:
+    streamx: "npm:^2.21.0"
+  peerDependencies:
+    bare-buffer: "*"
+    bare-events: "*"
+  peerDependenciesMeta:
+    bare-buffer:
+      optional: true
+    bare-events:
+      optional: true
+  checksum: 10c0/1242286f8f3147e9fd353cdaa9cf53226a807ac0dde8177c13f1463aa4cd1f88e07407c883a1b322b901e9af2d1cd30aacd873529031132c384622972e0419df
   languageName: node
   linkType: hard
 
@@ -17719,7 +17850,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4, debug@npm:^4.3.6, debug@npm:^4.4.0":
+"debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4, debug@npm:^4.3.5, debug@npm:^4.3.6, debug@npm:^4.4.0":
   version: 4.4.0
   resolution: "debug@npm:4.4.0"
   dependencies:
@@ -18110,6 +18241,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"docker-compose@npm:^0.24.8":
+  version: 0.24.8
+  resolution: "docker-compose@npm:0.24.8"
+  dependencies:
+    yaml: "npm:^2.2.2"
+  checksum: 10c0/1494389e554fed8aabf9fef24210a641cd2442028b1462d7f68186919f5e75045f7bfb4ccaf47c94ed879dcb63e4d82885c389399f531550c4b244920740b2b3
+  languageName: node
+  linkType: hard
+
+"docker-modem@npm:^3.0.0":
+  version: 3.0.8
+  resolution: "docker-modem@npm:3.0.8"
+  dependencies:
+    debug: "npm:^4.1.1"
+    readable-stream: "npm:^3.5.0"
+    split-ca: "npm:^1.0.1"
+    ssh2: "npm:^1.11.0"
+  checksum: 10c0/5c00592297fabd78454621fe765a5ef0daea4bbb6692e239ad65b111f4da9d750178f448f8efcaf84f9f999598eb735bc14ad6bf5f0a2dcf9c2d453d5b683540
+  languageName: node
+  linkType: hard
+
 "docker-modem@npm:^5.0.6":
   version: 5.0.6
   resolution: "docker-modem@npm:5.0.6"
@@ -18119,6 +18271,17 @@ __metadata:
     split-ca: "npm:^1.0.1"
     ssh2: "npm:^1.15.0"
   checksum: 10c0/8329bacc9884a21766495d45f24e952ad0b9cb0ea994a75c157a258efab8f9c7ff1ef12b075935406e7e9fc6304ad53f6bf98a2bb57752bf26f6c93ca55a856b
+  languageName: node
+  linkType: hard
+
+"dockerode@npm:^3.3.5":
+  version: 3.3.5
+  resolution: "dockerode@npm:3.3.5"
+  dependencies:
+    "@balena/dockerignore": "npm:^1.0.2"
+    docker-modem: "npm:^3.0.0"
+    tar-fs: "npm:~2.0.1"
+  checksum: 10c0/c45fa8ed3ad76f13fe7799d539a60fe466f8e34bea06b30d75be9e08bc00536cc9ff2d54e38fbb3b2a8a382bf9d4459a27741e6454ce7d0cda5cd35c51224c73
   languageName: node
   linkType: hard
 
@@ -23808,6 +23971,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"keyv@npm:*":
+  version: 5.3.1
+  resolution: "keyv@npm:5.3.1"
+  dependencies:
+    "@keyv/serialize": "npm:^1.0.3"
+  checksum: 10c0/d5ffe3d2d547a50a5e1189d5acbc0480821c22c025082851a8eeb26667d789f3f7b7ee7beb933660d98c239f7e7c403c652a511693670a78a73f06cd411e04fa
+  languageName: node
+  linkType: hard
+
 "keyv@npm:^4.5.2, keyv@npm:^4.5.3":
   version: 4.5.4
   resolution: "keyv@npm:4.5.4"
@@ -25605,7 +25777,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mkdirp@npm:^1.0.3":
+"mkdirp@npm:^1.0.3, mkdirp@npm:^1.0.4":
   version: 1.0.4
   resolution: "mkdirp@npm:1.0.4"
   bin:
@@ -28227,6 +28399,26 @@ __metadata:
     object-assign: "npm:^4.1.1"
     react-is: "npm:^16.13.1"
   checksum: 10c0/59ece7ca2fb9838031d73a48d4becb9a7cc1ed10e610517c7d8f19a1e02fa47f7c27d557d8a5702bec3cfeccddc853579832b43f449e54635803f277b1c78077
+  languageName: node
+  linkType: hard
+
+"proper-lockfile@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "proper-lockfile@npm:4.1.2"
+  dependencies:
+    graceful-fs: "npm:^4.2.4"
+    retry: "npm:^0.12.0"
+    signal-exit: "npm:^3.0.2"
+  checksum: 10c0/2f265dbad15897a43110a02dae55105c04d356ec4ed560723dcb9f0d34bc4fb2f13f79bb930e7561be10278e2314db5aca2527d5d3dcbbdee5e6b331d1571f6d
+  languageName: node
+  linkType: hard
+
+"properties-reader@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "properties-reader@npm:2.3.0"
+  dependencies:
+    mkdirp: "npm:^1.0.4"
+  checksum: 10c0/f665057e3a9076c643ba1198afcc71703eda227a59913252f7ff9467ece8d29c0cf8bf14bf1abcaef71570840c32a4e257e6c39b7550451bbff1a777efcf5667
   languageName: node
   linkType: hard
 
@@ -30927,7 +31119,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ssh2@npm:^1.15.0":
+"ssh-remote-port-forward@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "ssh-remote-port-forward@npm:1.0.4"
+  dependencies:
+    "@types/ssh2": "npm:^0.5.48"
+    ssh2: "npm:^1.4.0"
+  checksum: 10c0/33a441af12817577ea30d089b03c19f980d2fb2370933123a35026dc6be40f2dfce067e4dfc173e23d745464537ff647aa1bb7469be5571cc21f7cdb25181c09
+  languageName: node
+  linkType: hard
+
+"ssh2@npm:^1.11.0, ssh2@npm:^1.15.0, ssh2@npm:^1.4.0":
   version: 1.16.0
   resolution: "ssh2@npm:1.16.0"
   dependencies:
@@ -31160,7 +31362,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"streamx@npm:^2.15.0":
+"streamx@npm:^2.15.0, streamx@npm:^2.21.0":
   version: 2.22.0
   resolution: "streamx@npm:2.22.0"
   dependencies:
@@ -31712,6 +31914,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tar-fs@npm:^3.0.6":
+  version: 3.0.8
+  resolution: "tar-fs@npm:3.0.8"
+  dependencies:
+    bare-fs: "npm:^4.0.1"
+    bare-path: "npm:^3.0.0"
+    pump: "npm:^3.0.0"
+    tar-stream: "npm:^3.1.5"
+  dependenciesMeta:
+    bare-fs:
+      optional: true
+    bare-path:
+      optional: true
+  checksum: 10c0/b70bb2ad0490ab13b48edd10bd648bb54c52b681981cdcdc3aa4517e98ad94c94659ddca1925872ee658d781b9fcdd2b1c808050647f06b1bca157dd2fcae038
+  languageName: node
+  linkType: hard
+
 "tar-fs@npm:~2.0.1":
   version: 2.0.1
   resolution: "tar-fs@npm:2.0.1"
@@ -31737,7 +31956,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tar-stream@npm:^3.0.0":
+"tar-stream@npm:^3.0.0, tar-stream@npm:^3.1.5":
   version: 3.1.7
   resolution: "tar-stream@npm:3.1.7"
   dependencies:
@@ -31852,6 +32071,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"testcontainers@npm:^10.0.0":
+  version: 10.18.0
+  resolution: "testcontainers@npm:10.18.0"
+  dependencies:
+    "@balena/dockerignore": "npm:^1.0.2"
+    "@types/dockerode": "npm:^3.3.29"
+    archiver: "npm:^7.0.1"
+    async-lock: "npm:^1.4.1"
+    byline: "npm:^5.0.0"
+    debug: "npm:^4.3.5"
+    docker-compose: "npm:^0.24.8"
+    dockerode: "npm:^3.3.5"
+    get-port: "npm:^5.1.1"
+    proper-lockfile: "npm:^4.1.2"
+    properties-reader: "npm:^2.3.0"
+    ssh-remote-port-forward: "npm:^1.0.4"
+    tar-fs: "npm:^3.0.6"
+    tmp: "npm:^0.2.3"
+    undici: "npm:^5.28.5"
+  checksum: 10c0/efd4ca00c38d0b4152da5630525e236769c04b9ca726d124403107a6eedbfdfca79dda7f73770a0ea18ac34a55353953f3337d7543ec11a659b8c96219f39d8c
+  languageName: node
+  linkType: hard
+
 "text-decoder@npm:^1.1.0":
   version: 1.2.3
   resolution: "text-decoder@npm:1.2.3"
@@ -31872,6 +32114,13 @@ __metadata:
   version: 0.2.0
   resolution: "text-table@npm:0.2.0"
   checksum: 10c0/02805740c12851ea5982686810702e2f14369a5f4c5c40a836821e3eefc65ffeec3131ba324692a37608294b0fd8c1e55a2dd571ffed4909822787668ddbee5c
+  languageName: node
+  linkType: hard
+
+"textextensions@npm:^5.16.0":
+  version: 5.16.0
+  resolution: "textextensions@npm:5.16.0"
+  checksum: 10c0/bc90dc60272c3ffb76eeff86dc1decab9535ba8da6a00efe2a005763d0305cb445db9ac35970538c59b89bf41820c3d19394f46c6b7346d520b9ae16fe47be80
   languageName: node
   linkType: hard
 
@@ -32036,7 +32285,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tmp@npm:^0.2.0":
+"tmp@npm:^0.2.0, tmp@npm:^0.2.3":
   version: 0.2.3
   resolution: "tmp@npm:0.2.3"
   checksum: 10c0/3e809d9c2f46817475b452725c2aaa5d11985cf18d32a7a970ff25b568438e2c076c2e8609224feef3b7923fa9749b74428e3e634f6b8e520c534eef2fd24125
@@ -32841,7 +33090,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^5.25.4":
+"undici@npm:^5.25.4, undici@npm:^5.28.5":
   version: 5.28.5
   resolution: "undici@npm:5.28.5"
   dependencies:
@@ -34186,7 +34435,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.0.0, yaml@npm:^2.2.1, yaml@npm:^2.3.2, yaml@npm:^2.4.1":
+"yaml@npm:^2.0.0, yaml@npm:^2.2.1, yaml@npm:^2.2.2, yaml@npm:^2.3.2, yaml@npm:^2.4.1":
   version: 2.7.0
   resolution: "yaml@npm:2.7.0"
   bin:
