@@ -45,6 +45,9 @@ import { HomepageCompositionRoot } from '@backstage/plugin-home';
 import { HomePage } from './components/home/HomePage';
 import * as plugins from './plugins';
 import { ExplorePage } from '@backstage-community/plugin-explore';
+import customColumnsFunc from './components/catalog/custom-columns';
+import { EntityKindPicker, EntityTypePicker, UserListPicker, EntityOwnerPicker } from '@backstage/plugin-catalog-react';
+
 
 const app = createApp({
   apis,
@@ -90,7 +93,18 @@ const routes = (
     <Route path="/" element={<HomepageCompositionRoot />}>
       <HomePage />
     </Route>;
-    <Route path="/catalog" element={<CatalogIndexPage />} />
+    <Route path="/catalog"
+      element={<CatalogIndexPage
+        columns={customColumnsFunc}
+        filters={
+          <>
+            <EntityKindPicker />
+            <EntityTypePicker />
+            <UserListPicker />
+            <EntityOwnerPicker />
+          </>
+        }
+      />} />
     <Route
       path="/catalog/:namespace/:kind/:name"
       element={<CatalogEntityPage />}

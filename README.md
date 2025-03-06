@@ -30,7 +30,8 @@ yarn dev
 yarn install --immutable
 yarn tsc && yarn build:backend
 # 编译镜像，需要安装 docker 并启用 docker buildx，示例
-docker buildx build --tag ganymede:dev --platform linux/amd64,linux/arm64 --load
+docker buildx build --push --platform linux/amd64,linux/arm64 -t nxest/ganymede:dev .
+# docker buildx build --push --platform linux/amd64 -t nxest/ganymede:dev .
 ```
 
 ### Backstage 版本升级

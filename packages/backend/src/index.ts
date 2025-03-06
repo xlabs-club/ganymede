@@ -58,11 +58,13 @@ backend.add(import('@backstage/plugin-kubernetes-backend'));
 
 // keycloak user and group
 backend.add(import('@backstage-community/plugin-catalog-backend-module-keycloak'));
+backend.add(import('@internal/plugin-catalog-backend-module-keycloak-transformer'));
 
 // playlist
 backend.add(import('@backstage-community/plugin-playlist-backend'));
 
 // explore
 backend.add(import('@backstage-community/plugin-explore-backend'));
+
 
 backend.start();
