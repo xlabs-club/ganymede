@@ -14,6 +14,7 @@
     "lint": "backstage-cli package lint"
   },
   "dependencies": {
+    "@backstage-community/plugin-announcements": "^0.5.2",
     "@backstage-community/plugin-explore": "^0.7.0",
     "@backstage-community/plugin-playlist": "^0.4.0",
     "@backstage-community/plugin-rbac": "^1.38.1",
