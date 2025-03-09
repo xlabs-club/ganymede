@@ -71,18 +71,18 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
       <SidebarDivider />
       <SidebarGroup label="Menu" icon={<MenuIcon />}>
         {/* Global nav, not org-specific */}
-        <SidebarItem icon={HomeIcon} to="/" text="Home" />
-        <SidebarItem icon={CategoryIcon} to="catalog" text="Catalog" />
+        <SidebarItem icon={HomeIcon} to="/" text="Dashboard" />
+        <SidebarItem icon={CategoryIcon} to="catalog" text="服务目录" />
         <MyGroupsSidebarItem
-          singularTitle="My Group"
-          pluralTitle="My Groups"
+          singularTitle="我的小组"
+          pluralTitle="我的小组"
           icon={GroupIcon}
         />
-        <SidebarItem icon={ExtensionIcon} to="api-docs" text="APIs" />
-        <SidebarItem icon={LibraryBooks} to="docs" text="Docs" />
-        <SidebarItem icon={CreateComponentIcon} to="create" text="Create..." />
-        <SidebarItem icon={LayersIcon} to="explore" text="Explore" />
-        <SidebarItem icon={CardTravel} to="toolbox" text="ToolBox" />
+        <SidebarItem icon={ExtensionIcon} to="api-docs" text="API列表" />
+        <SidebarItem icon={LibraryBooks} to="docs" text="技术文档" />
+        <SidebarItem icon={CreateComponentIcon} to="create" text="软件模板" />
+        <SidebarItem icon={LayersIcon} to="explore" text="探索" />
+        <SidebarItem icon={CardTravel} to="toolbox" text="工具箱" />
         {/* End global nav */}
         <SidebarDivider />
         <SidebarScrollWrapper>
