@@ -47,8 +47,6 @@ import * as plugins from './plugins';
 import { ExplorePage } from '@backstage-community/plugin-explore';
 import customColumnsFunc from './components/catalog/custom-columns';
 import { EntityKindPicker, EntityTypePicker, UserListPicker, EntityOwnerPicker } from '@backstage/plugin-catalog-react';
-
-
 const app = createApp({
   apis,
   plugins: Object.values(plugins),
