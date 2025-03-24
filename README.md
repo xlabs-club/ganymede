@@ -26,10 +26,7 @@ Backstage 官方开源有开箱即用的容器镜像，也有丰富的插件生�
 yarn install
 yarn dev
 
-# 版本发布
-yarn install --immutable
-yarn tsc && yarn build:backend
-# 编译镜像，需要安装 docker 并启用 docker buildx，示例
+# 版本发布，使用镜像的多阶段构建，完整流程参考 Dockerfile
 docker buildx build --push --platform linux/amd64,linux/arm64 -t nxest/ganymede:dev .
 # docker buildx build --push --platform linux/amd64 -t nxest/ganymede:dev .
 ```
