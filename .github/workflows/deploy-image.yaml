@@ -70,5 +70,5 @@ jobs:
           docker buildx build . \
             --tag $IMAGE_NAME:$VERSION \
             --tag $IMAGE_NAME:latest \
-            --platform linux/amd64,linux/arm64 \
+            --platform linux/amd64 \
             --push
