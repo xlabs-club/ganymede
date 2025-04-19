@@ -24,7 +24,7 @@ Backstage 官方开源有开箱即用的容器镜像，也有丰富的插件生�
 ```sh
 # 本地开发
 yarn install
-yarn dev
+yarn start
 
 # 版本发布，使用镜像的多阶段构建，完整流程参考 Dockerfile
 docker buildx build --push --platform linux/amd64,linux/arm64 -t nxest/ganymede:dev .
@@ -43,7 +43,8 @@ Backstage 版本更新很频繁，保持最新版本的方法请参考官方文�
      # 只升级 @backstage 包
      yarn backstage-cli versions:bump
      # 按指定 pattern 升级包
-     yarn backstage-cli versions:bump --pattern '@{backstage,backstage-community}/*'
+     # yarn backstage-cli versions:bump --pattern '@{backstage,backstage-community}/*'
+     yarn backstage-cli versions:bump --pattern '@{backstage-community,drodil}/*'
     ```
 
 2. 从 backstage.json 获取当前项目版本，使用 [upgrade-helper](https://backstage.github.io/upgrade-helper/?from=1.30.0&to=1.31.1) 比对从 x 版本到 y 版本有哪些更新，根据 diff 手动合并到自己项目中。
