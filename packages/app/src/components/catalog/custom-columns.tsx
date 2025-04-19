@@ -1,6 +1,5 @@
 import { TableColumn, OverflowTooltip } from "@backstage/core-components";
 import { CatalogTableRow, CatalogTableColumnsFunc, CatalogTable } from "@backstage/plugin-catalog";
-import React from "react";
 
 const createUserEmailColumn = (): TableColumn<CatalogTableRow> => ({
     title: '邮箱',
