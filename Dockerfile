@@ -20,21 +20,23 @@ FROM node:24-bookworm-slim AS build
 
 # Set Python interpreter for `node-gyp` to use
 ENV PYTHON=/usr/bin/python3
+# Ensure node-gyp can find build tools
+ENV npm_config_build_from_source=true
 
-# Install isolate-vm dependencies, these are needed by the @backstage/plugin-scaffolder-backend.
+# Install all build dependencies needed for native modules compilation
+# This includes tools for isolate-vm, better-sqlite3, tree-sitter, cpu-features, etc.
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update && \
-    apt-get install -y --no-install-recommends python3 g++ build-essential && \
-    rm -rf /var/lib/apt/lists/*
-
-# Install sqlite3 dependencies. You can skip this if you don't use sqlite3 in the image,
-# in which case you should also move better-sqlite3 to "devDependencies" in package.json.
-# RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-#     --mount=type=cache,target=/var/lib/apt,sharing=locked \
-#     apt-get update && \
-#     apt-get install -y --no-install-recommends libsqlite3-dev && \
-#     rm -rf /var/lib/apt/lists/*
+    apt-get install -y --no-install-recommends \
+    python3 \
+    g++ \
+    gcc \
+    make \
+    build-essential \
+    pkg-config \
+    libsqlite3-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 USER node
 WORKDIR /app
