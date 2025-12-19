@@ -1,7 +1,7 @@
 # https://backstage.io/docs/deployment/docker/#multi-stage-build
 
 # Stage 1 - Create yarn install skeleton layer
-FROM node:22-bookworm-slim AS packages
+FROM node:24-bookworm AS packages
 
 WORKDIR /app
 COPY backstage.json package.json yarn.lock ./
@@ -16,7 +16,7 @@ COPY plugins plugins
 RUN find packages \! -name "package.json" -mindepth 2 -maxdepth 2 -exec rm -rf {} \+
 
 # Stage 2 - Install dependencies and build packages
-FROM node:22-bookworm-slim AS build
+FROM node:24-bookworm AS build
 
 # Set Python interpreter for `node-gyp` to use
 ENV PYTHON=/usr/bin/python3
@@ -28,14 +28,7 @@ ENV npm_config_build_from_source=true
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update && \
-    apt-get install -y --no-install-recommends \
-    python3 \
-    g++ \
-    gcc \
-    make \
-    build-essential \
-    pkg-config \
-    libsqlite3-dev \
+    apt-get install -y --no-install-recommends libsqlite3-dev python3 g++ build-essential && \
     && rm -rf /var/lib/apt/lists/*
 
 USER node
@@ -56,7 +49,7 @@ RUN mkdir packages/backend/dist/skeleton packages/backend/dist/bundle \
     && tar xzf packages/backend/dist/bundle.tar.gz -C packages/backend/dist/bundle
 
 # Stage 3 - Build the actual backend image and install production dependencies
-FROM node:22-bookworm-slim
+FROM node:24-bookworm-slim
 
 # Set Python interpreter for `node-gyp` to use
 ENV PYTHON=/usr/bin/python3
