@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "20 || 22"
+    "node": "22 || 24"
   },
   "scripts": {
     "start": "backstage-cli repo start",
@@ -29,9 +29,16 @@
     ]
   },
   "devDependencies": {
-    "@backstage/cli": "^0.34.5",
+    "@backstage/cli": "^0.35.1",
     "@backstage/e2e-test-utils": "^0.1.1",
+    "@jest/environment-jsdom-abstract": "^30",
     "@playwright/test": "^1.32.3",
+    "@testing-library/react": "^16",
+    "@types/jest": "^30",
+    "@types/jsdom": "^27",
+    "better-sqlite3": "^12",
+    "jest": "^30",
+    "jsdom": "^27",
     "node-gyp": "^10.0.0",
     "prettier": "^2.3.2",
     "typescript": "~5.4.0"

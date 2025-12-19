@@ -1,7 +1,7 @@
 # https://backstage.io/docs/deployment/docker/#multi-stage-build
 
 # Stage 1 - Create yarn install skeleton layer
-FROM node:22-bookworm-slim AS packages
+FROM node:24-bookworm AS packages
 
 WORKDIR /app
 COPY backstage.json package.json yarn.lock ./
@@ -16,25 +16,20 @@ COPY plugins plugins
 RUN find packages \! -name "package.json" -mindepth 2 -maxdepth 2 -exec rm -rf {} \+
 
 # Stage 2 - Install dependencies and build packages
-FROM node:22-bookworm-slim AS build
+FROM node:24-bookworm AS build
 
 # Set Python interpreter for `node-gyp` to use
 ENV PYTHON=/usr/bin/python3
+# Ensure node-gyp can find build tools
+ENV npm_config_build_from_source=true
 
-# Install isolate-vm dependencies, these are needed by the @backstage/plugin-scaffolder-backend.
+# Install all build dependencies needed for native modules compilation
+# This includes tools for isolate-vm, better-sqlite3, tree-sitter, cpu-features, etc.
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update && \
-    apt-get install -y --no-install-recommends python3 g++ build-essential && \
+    apt-get install -y --no-install-recommends libsqlite3-dev python3 g++ build-essential && \
     rm -rf /var/lib/apt/lists/*
-
-# Install sqlite3 dependencies. You can skip this if you don't use sqlite3 in the image,
-# in which case you should also move better-sqlite3 to "devDependencies" in package.json.
-# RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-#     --mount=type=cache,target=/var/lib/apt,sharing=locked \
-#     apt-get update && \
-#     apt-get install -y --no-install-recommends libsqlite3-dev && \
-#     rm -rf /var/lib/apt/lists/*
 
 USER node
 WORKDIR /app
@@ -54,7 +49,7 @@ RUN mkdir packages/backend/dist/skeleton packages/backend/dist/bundle \
     && tar xzf packages/backend/dist/bundle.tar.gz -C packages/backend/dist/bundle
 
 # Stage 3 - Build the actual backend image and install production dependencies
-FROM node:22-bookworm-slim
+FROM node:24-bookworm-slim
 
 # Set Python interpreter for `node-gyp` to use
 ENV PYTHON=/usr/bin/python3
