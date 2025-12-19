@@ -91,7 +91,7 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
       </SidebarGroup>
       <SidebarSpace />
       {/* <SidebarItem icon={PlaylistPlayIcon} to="playlist" text="Playlists" /> */}
-      <Shortcuts allowExternalLinks={true} />
+      <Shortcuts allowExternalLinks />
       <SidebarDivider />
       <Administration />
       <SidebarGroup
